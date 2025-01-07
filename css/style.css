@@ -210,7 +210,9 @@ footer{
     }
     .tab-duas-colunas input, .tab-duas-colunas select{
         width: 80%;
-        padding-right: 10px;
+    }
+    .tab-radio-check label{
+        margin-right: 40px;
     }
     form button{
         margin: 10px 0;

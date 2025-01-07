@@ -197,6 +197,9 @@ footer{
 }
 /* Responsivo */
 @media (max-width: 540px){
+    *{
+        margin: 0 1px;
+    }
     .input-col input, .tab-duas-colunas input, .tab-duas-colunas select{
         padding: 5px;
         margin: 0;
@@ -207,13 +210,37 @@ footer{
     }
     .tab-duas-colunas input, .tab-duas-colunas select{
         width: 80%;
+        padding-right: 10px;
+    }
+    form button{
+        margin: 10px 0;
+    }
+    form h2{
+        padding-bottom: 20px;
     }
     .ofertas{
         flex-direction: column;
     }
+    .duas-colunas figure{
+        width: 100%;
+    }
+    .duas-colunas img{
+        width: 100%;
+    }
+    .duas-colunas figcaption{
+        width: 100%;
+        left: 0;
+        bottom: 10px;
+    }
     .uma-coluna figure{
         width: 100%;
-    }       
+    } 
+    .anuncios-img{
+        flex-direction: column;
+    }   
+    .anuncios-img figure{
+        width: 100%;
+    }  
 }
 
 

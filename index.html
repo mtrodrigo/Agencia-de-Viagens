@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agência de Viagem</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300&amp;display=swap">
 </head>
 <body>
     <header>
@@ -19,31 +20,31 @@
     </header>
     <main>
         <section class="banner-form">
-            <div class="form">
-                <img src="assets/aviao.png" alt="Avião">
-                <h3>Solicite um orçamento</h3>
-                <form action="https://www.devmedia.com.br/codigos/missao/front-end/agencia-de-viagens/">
+            <div class="formulario">
+                <div class="form-cabecalho">
+                    <img src="assets/aviao.png" alt="Avião">
+                    <h3>Solicite um orçamento</h3>
+                </div>
+                <form method="post" action="https://www.devmedia.com.br/codigos/missao/front-end/agencia-de-viagens/">
                     <h2>Informe seus dados</h2>
-                    <div>
-                        <label for="nome">Name</label>
-                        <input id="nome" type="text" name="nome" maxlength="80" placeholder="Digite seu nome" required>
+                    <div class="input-col">
+                        <label for="nome">Nome</label>
+                        <input id="nome" type="text" name="nome" placeholder="Digite seu nome" required>
                     </div>
-                    <div>
+                    <div class="input-col">
                         <label for="email">E-mail</label>
-                        <input id="email" type="text" name="email" maxlength="80" placeholder="Digite seu e-mail" required>
+                        <input id="email" type="text" name="email" placeholder="Digite seu e-mail" required>
                     </div>
-                    <div>
+                    <div class="input-col">
                         <label for="celular">Celular</label>
-                        <input id="celular" type="text" name="celular" maxlength="14" placeholder="(xx)xxxxx-xxxx" required>
+                        <input id="celular" type="text" name="celular" placeholder="(xx)xxxxx-xxxx" required>
                     </div>
                     <div class="tab-duas-colunas">
                         <div>
-                            <label for="data-ida">Data da ida</label>
-                            <input id="data-ida" type="date" name="data-ida" required>
-                        </div>
-                        <div>
-                            <label for="data-ida">Data da volta</label>
-                            <input id="data-volta" type="date" name="data-volta" required>
+                            <label for="partida">Data da ida</label>
+                            <input id="partida" type="date" name="partida" required>
+                            <label for="chegada">Data da volta</label>
+                            <input id="chegada" type="date" name="chegada" required>
                         </div>
                     </div>
                     <div class="tab-duas-colunas">
@@ -51,31 +52,37 @@
                             <label for="origem">Origem</label>
                             <select name="origem" id="origem" required>
                                 <option value="">Partindo de</option>
+                                <option value="rio">Rio de Janeiro</option>
+                                <option value="sao-paulo">São Paulo</option>
+                                <option value="bh">Belo Horizonte</option>
                             </select>
-                        </div>
-                        <div>
                             <label for="destino">Destino</label>
                             <select name="destino" id="destino" required>
                                 <option value="">Indo para</option>
+                                <option value="rio">Rio de Janeiro</option>
+                                <option value="manaus">Manaus</option>
+                                <option value="sao-paulo">São Paulo</option>
+                                <option value="maranhao">Maranhão</option>
+                                <option value="santa-barbara">Santa Bárbara</option>
                             </select>
                         </div>
                     </div>
-                    <div>
+                    <div class="tab-radio-check">
                         <p>Quartos com cama infantil?</p>
-                        <input type="radio" name="cama-infantil" id="cama-infantil-sim" value="sim" required>
-                        <label for="cama-infantil-sim">Sim</label>
-                        <input type="radio" name="cama-infantil" id="cama-infantil-nao" value="nao" required>
-                        <label for="cama-infantil-nao">Não</label>
+                        <input type="radio" name="infantil" id="infantil-sim" value="sim">
+                        <label for="infantil-sim">Sim</label>
+                        <input type="radio" name="infantil" id="infantil-nao" value="nao">
+                        <label for="infantil-nao">Não</label>
                     </div>
-                    <div>
+                    <div class="tab-radio-check">
                         <p>Preferência na hosopedagem</p>
-                        <input id="futebol" type="checkbox" name="hosopedagem[]" value="futebol">
+                        <input id="futebol" type="checkbox" name="preferencias[]" value="futebol">
                         <label for="futebol">Futebol</label>
-                        <input id="wifi" type="checkbox" name="hosopedagem[]" value="wifi">
+                        <input id="wifi" type="checkbox" name="preferencias[]" value="wifi">
                         <label for="wifi">Wi-Fi</label>
-                        <input id="garagem" type="checkbox" name="hosopedagem[]" value="garagem">
+                        <input id="garagem" type="checkbox" name="preferencias[]" value="garagem">
                         <label for="garagem">Garagem</label>
-                        <input id="suite" type="checkbox" name="hosopedagem[]" value="suite">
+                        <input id="suite" type="checkbox" name="preferencias[]" value="suite">
                         <label for="suite">Suite</label>
                     </div>
                     <div>
@@ -85,11 +92,9 @@
             </div>
         </section>
         <section class="marketing">
+            <h2>Ofertas</h2>
+            <p>Com até <strong>50%</strong> de desconto.</p>
             <div class="ofertas">
-                <div class="ofertas-texto">
-                   <h2>Ofertas</h2>
-                   <p>Com até 50% de desconto.</p> 
-                </div>
                 <div class="uma-coluna">
                     <figure>
                         <img src="assets/rio.jpg" alt="Rio de Janeiro">
@@ -105,8 +110,6 @@
                         <img src="assets/niteroi.jpg" alt="Rio de Janeiro">
                         <figcaption>Rio de Janeiro</figcaption>
                     </figure>
-                </div>
-                <div class="duas-colunas">
                     <figure>
                         <img src="assets/saopaulo.jpg" alt="São Paulo">
                         <figcaption>São Paulo</figcaption>
@@ -122,15 +125,15 @@
                     <h2>Explore a Natureza</h2>
                     <p>Viaje conosco e veja o melhor que a natureza tem a oferecer.</p>
                 </div>
-                <div class="duas-colunas">
+                <div class="anuncios-img">
                     <figure>
                         <img src="assets/lencol.jpg" alt="Lençois Maranhenses">
-                        <figcaption>Lençois Maranhenses, Brasil</figcaption>
+                        <figcaption><strong>Lençois Maranhenses, Brasil</strong></figcaption>
                         <p>Ida e volta a partir de R$79</p>
                     </figure>
                     <figure>
                         <img src="assets/goias.jpg" alt="Cachoeira Santa Bárbara, Brasil">
-                        <figcaption>Cachoeira Santa Bárbara, Brasil</figcaption>
+                        <figcaption><strong>Cachoeira Santa Bárbara, Brasil</strong></figcaption>
                         <p>Ida e volta por R$139</p>
                     </figure>
                 </div>
